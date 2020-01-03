@@ -104,7 +104,7 @@ export class LoginComponent extends BaseRoutableComponent implements OnInit, Aft
 								} else {
 									this.externalToolsManager.externaltoolsList.updateIfLoaded();
 									// first time only do welcome
-									this.router.navigate([ (localStorage.signup) ?'auth/welcome' :'recipient' ]);
+									this.router.navigate([ (localStorage.signup) ?'auth/welcome' :'issuer' ]);
 								}
 							} else {
 								this.router.navigate([ 'signup/success', { email: profile.emails.entities[0].email } ]);
@@ -143,7 +143,7 @@ export class LoginComponent extends BaseRoutableComponent implements OnInit, Aft
 		try {
 			// Handle authcode exchange
 			const authCode = this.queryParams.queryStringValue("authCode", true);
-			const redirect = 'recipient';
+			const redirect = 'issuer';
 			if (authCode) {
 				this.sessionService.exchangeCodeForToken(authCode).then(token => {
 					this.sessionService.storeToken(token);

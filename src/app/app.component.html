@@ -25,22 +25,8 @@
 		<ng-template [ngIf]="loggedIn && ! isOAuthAuthorizationInProcess">
 			<nav class="navbar-x-items" role="menubar">
 				<div class="navbar-x-navitems">
-					<a role="menuitem" [class.navitem-light]="!theme.useColorNavbar" class="navitem" routerLinkActive="navitem-is-active"
-					 [routerLink]="['/recipient/badges']">Backpack</a>
-					<a role="menuitem" [class.navitem-light]="!theme.useColorNavbar" class="navitem" routerLinkActive="navitem-is-active"
-					 [routerLink]="['/recipient/badge-collections']">Collections</a>
 					<a role="menuitem" *ngIf="showIssuersTab()" [class.navitem-light]="!theme.useColorNavbar"
 					 class="navitem" routerLinkActive="navitem-is-active" [routerLink]="['/issuer']">Issuers</a>
-					<button role="menuitem" aria-haspopup="true" [class.navitem-light]="!theme.useColorNavbar" class="navitem u-cursor-pointer"
-					 *ngIf="launchpoints?.length" routerLinkActive="navitem-is-active" [bgPopupMenuTrigger]="appsMenu">
-						Apps
-						<svg class="navitem-x-icon" icon="icon_dropdown"></svg>
-					</button>
-					<a role="menuitem" [class.navitem-light]="!theme.useColorNavbar" class="navitem u-cursor-pointer" *ngIf="theme.customMenu"
-					 routerLinkActive="navitem-is-active" [bgPopupMenuTrigger]="customMenu">
-						{{ theme.customMenu.label }}
-						<svg class="navitem-x-icon" icon="icon_dropdown"></svg>
-					</a>
 					<button role="menuitem" aria-haspopup="true" [class.navitem-light]="!theme.useColorNavbar" class="navitem u-cursor-pointer"
 					 routerLinkActive="navitem-is-active" [bgPopupMenuTrigger]="accountMenu">
 						Account
@@ -137,7 +123,6 @@
 
 <!-- TODO: Assess dialog patterns - use inert polyfill -->
 <confirm-dialog #confirmDialog></confirm-dialog>
-<new-terms-dialog #newTermsDialog></new-terms-dialog>
 <share-social-dialog #shareSocialDialog></share-social-dialog>
 <markdown-hints-dialog #markdownHintsDialog></markdown-hints-dialog>
 

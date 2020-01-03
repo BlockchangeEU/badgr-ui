@@ -7,6 +7,10 @@ import { BadgrEnvironment } from './badgr-environment';
 
 export const environment: BadgrEnvironment = {
 		production: false,
-		config: undefined
+		config: {
+			api: {
+				baseUrl: 'http://ec2-63-35-222-104.eu-west-1.compute.amazonaws.com:8000',
+			},
+		}
 	}
 ;
